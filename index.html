@@ -8,6 +8,69 @@
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/kTc6xjw9NNTcGkZ5h6u7VxO3x+lWh7sDGLkEbCl/2M+WqS2KMPZkNcb4RkFpuhbExJQkVExf2ZJ5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    body {
+      font-family: 'Heebo', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #ffe6f0, #fffafc);
+      color: #3a3a3a;
+    }
+    header, section, footer {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: #c71585;
+      font-weight: bold;
+    }
+    h1, h2 {
+      color: #c71585;
+    }
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1534705867302-1a4f61f3c3f9');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      font-size: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .testimonials blockquote {
+      font-style: italic;
+      border-right: 4px solid #c71585;
+      padding-right: 1rem;
+      margin: 1rem 0;
+    }
+    footer {
+      text-align: center;
+      background: #c71585;
+      color: white;
+      padding: 1rem;
+    }
+    .contact a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #ffd700;
+      color: #c71585;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
     #muteButton {
       position: fixed;
       bottom: 20px;
@@ -31,48 +94,64 @@
   </audio>
   <button id="muteButton" onclick="toggleMute()">🔊 השתק</button>
 
-  <div class="hero" role="banner" aria-label="תמונה של גלידה ודייט">הדייט הבא שלכם מתחיל כאן 🍦❤️</div>
-  <header role="banner">
+  <div class="hero" role="banner">הדייט הבא שלכם מתחיל כאן 🍦❤️</div>
+
+  <header>
     <h1>גלידריית השחר - גלידריית האהבה</h1>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <nav id="nav-menu" role="navigation" aria-label="תפריט ראשי">
-      <a href="#home" class="active">בית</a>
+    <nav>
       <a href="#about">אודות</a>
-      <a href="#ideas">הצעות רומנטיות</a>
-      <a href="#blog">בלוג אהבה</a>
+      <a href="#ideas">הצעות לדייט</a>
       <a href="#testimonials">לקוחות מספרים</a>
       <a href="#gallery">גלריה</a>
       <a href="#contact">צור קשר</a>
     </nav>
   </header>
 
+  <section id="about">
+    <h2>אודות</h2>
+    <p>גלידריית השחר הוקמה כדי ליצור מקום קסום לדייטים. בין טעימות מתוקות, שיחות אינטימיות ואווירה רומנטית, המקום מושלם לאהבה.</p>
+  </section>
+
+  <section id="ideas">
+    <h2>הצעות לדייט</h2>
+    <ul>
+      <li>הפתעת בן/בת הזוג עם גלידה בצורת לב</li>
+      <li>לילה רומנטי תחת הכוכבים עם גלידה זוגית</li>
+      <li>משחק טעימות של טעמי גלידה מפתיעים</li>
+    </ul>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>לקוחות מספרים</h2>
+    <blockquote>“המקום הכי רומנטי שהיינו בו!”</blockquote>
+    <blockquote>“הגלידה הייתה טעימה, והאווירה עוד יותר.”</blockquote>
+    <blockquote>“הצעת הנישואין שלנו הייתה כאן. תודה!”</blockquote>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>גלריה</h2>
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="גלידת תות">
+    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac" alt="זוג עם גלידה">
+    <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03" alt="לבבות בגלידה">
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>צור קשר</h2>
+    <p>רוצה שגם לך נעצב אתר מהמם, לוגו או סרטון?</p>
+    <a href="https://wa.me/972553151070">שלח לנו וואטסאפ</a>
+    <a href="mailto:thesimonolution@gmail.com">שלח מייל</a>
+  </section>
+
+  <footer>
+    <p>נוצר באהבה על ידי הסיימונולושן | פתרונות דיגיטליים</p>
+  </footer>
+
   <script>
-    function toggleMenu() {
-      document.getElementById('nav-menu').classList.toggle('active');
-    }
     function toggleMute() {
       const music = document.getElementById("bg-music");
       const btn = document.getElementById("muteButton");
       music.muted = !music.muted;
       btn.textContent = music.muted ? "🔇 הפעל" : "🔊 השתק";
-    }
-    window.addEventListener('scroll', () => {
-      const btn = document.getElementById('topBtn');
-      if (btn) btn.style.display = window.scrollY > 200 ? 'block' : 'none';
-
-      document.querySelectorAll('section').forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          section.classList.add('visible');
-        }
-      });
-    });
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 </body>
