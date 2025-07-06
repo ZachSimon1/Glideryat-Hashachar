@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>גלידריית השחר</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2331/2331713.png">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/kTc6xjw9NNTcGkZ5h6u7VxO3x+lWh7sDGLkEbCl/2M+WqS2KMPZkNcb4RkFpuhbExJQkVExf2ZJ5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    #muteButton {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #c71585;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <audio id="bg-music" autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/05/30/audio_1b6b7cb59a.mp3?filename=romantic-cinematic-piano-146027.mp3" type="audio/mpeg">
+    הדפדפן שלך אינו תומך בניגון מוזיקה.
+  </audio>
+  <button id="muteButton" onclick="toggleMute()">🔊 השתק</button>
+
+  <div class="hero" role="banner" aria-label="תמונה של גלידה ודייט">הדייט הבא שלכם מתחיל כאן 🍦❤️</div>
+  <header role="banner">
+    <h1>גלידריית השחר - גלידריית האהבה</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="nav-menu" role="navigation" aria-label="תפריט ראשי">
+      <a href="#home" class="active">בית</a>
+      <a href="#about">אודות</a>
+      <a href="#ideas">הצעות רומנטיות</a>
+      <a href="#blog">בלוג אהבה</a>
+      <a href="#testimonials">לקוחות מספרים</a>
+      <a href="#gallery">גלריה</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('active');
+    }
+    function toggleMute() {
+      const music = document.getElementById("bg-music");
+      const btn = document.getElementById("muteButton");
+      music.muted = !music.muted;
+      btn.textContent = music.muted ? "🔇 הפעל" : "🔊 השתק";
+    }
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('topBtn');
+      if (btn) btn.style.display = window.scrollY > 200 ? 'block' : 'none';
+
+      document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    });
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
